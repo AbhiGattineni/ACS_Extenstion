@@ -56,8 +56,19 @@ section{
     color: white;
 }
 
+div{
+    display: flex;
+    gap: 10px;
+}
+
+div input{
+    border-radius: 10px;
+    border: 2px solid;
+    padding: 0 10px;
+}
+
 .add-btn {
-    position: fixed;
+    cursor: pointer;
     bottom: 20px;
     right: 20px;
     width: 40px;
@@ -70,13 +81,18 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all .2s linear;
 }
 
 .add-btn i {
     font-size: 50px;
 }
 
-#submit{
+.add-btn:active{
+    box-shadow: 0 0 0;
+}
+
+#highlightButton{
     padding: 10px 25px;
     border: none;
     border-radius: 10px;
@@ -85,4 +101,10 @@ section{
     letter-spacing: 2px;
     font-size: medium;
     cursor: pointer;
+    box-shadow: 2px 2px 7px gray;
+    transition: all .2s linear;
+}
+
+#highlightButton:active{
+    box-shadow: 0 0 0;
 }
