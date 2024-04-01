@@ -7,11 +7,12 @@
 body{
     background-color: rgba(244, 244, 244, 0.622);
     position: relative;
+    width: 500px;
 }
 
 nav{
     background-color: #fff;
-    box-shadow: 5px 0 5px gray;
+    box-shadow: 0 0 5px gray;
     padding: 1rem;
     text-align: center;
 }
@@ -28,14 +29,12 @@ main{
 .tab{
     background-color: rgb(220, 220, 220);
     display: inline-flex;
-    padding: 5px 15px;
+    padding: 5px 10px 5px 10px;
     border-radius: 10px;
-    cursor: pointer;
 }
 
-.tab:hover{
-    background-color: rgba(75, 75, 225, 0.901);
-    color: #fff;
+.tab i{
+    cursor: pointer;
 }
 
 .hint{
@@ -51,20 +50,66 @@ section{
     gap: 10px;
 }
 
-.tab:first-child{
-    background-color: rgba(75, 75, 225, 0.901);
-    color: white;
+section p{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    color: black;
+}
+
+section p i {
+    color: #fff;
 }
 
 div{
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 20px;
 }
 
 div input{
-    border-radius: 10px;
+    border-radius: 7px;
     border: 2px solid;
-    padding: 0 10px;
+    padding: 10px 10px;
+}
+
+aside{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+aside input:checked::after{
+    border: 2px solid black;
+}
+
+aside input{
+    position: relative;
+    cursor: pointer;
+}
+
+aside input::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.redc::after{
+    background-color: #FF3946;
+}
+
+.yellowc::after{
+    background-color: #e9ff70;
+}
+
+.greenc::after{
+    background-color: #7cffc4;
 }
 
 .add-btn {

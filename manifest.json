@@ -1,30 +1,29 @@
 {
-    "manifest_version": 3,
-    "name": "Keyword Highlighter",
-    "version": "1.0",
-    "description": "Highlight specific keywords on Jobs",
-    "permissions": ["activeTab"],
-    "action": {
-      "default_popup": "index.html",
-      "default_icon": {
-        "16": "images/icon.png",
-        "48": "images/icon.png",
-        "128": "images/icon.png"
-      }
-    },
-    "icons": {
-        "16": "images/icon.png",
-        "48": "images/icon.png",
-        "128": "images/icon.png"
-    },
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["contentScript.js"]
-      }
-    ]
-  }
-  
+  "manifest_version": 3,
+  "name": "Keyword Highlighter",
+  "version": "1.0",
+  "description": "Highlight specific keywords on webpages",
+  "permissions": ["tabs", "storage", "activeTab"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "images/icon.png",
+      "48": "images/icon.png",
+      "128": "images/icon.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}

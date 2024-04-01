@@ -12,13 +12,17 @@
         <h1>Highlight keywords</h1>
     </nav>
     <main>
-        <p class="hint">select keywords to highlight</p>
+        <p class="hint">Selected keywords to highlight</p>
         <section>
         </section>
-        <button id="highlightButton">Highlight</button>
         <div>
+            <aside>
+                <input type="radio" id="redColor" name="color" class="redc clr">
+                <input type="radio" id="greenColor" name="color" class="greenc clr">
+                <input type="radio" id="yellowColor" name="color" class="yellowc clr" checked>
+            </aside>
             <input id="keywordsInput" type="text" placeholder="Enter Keyword">
-            <button title="add-keyword" class="add-btn"><i class='bx bxs-plus-circle'></i></button>
+            <button title="Add Keyword" class="add-btn"><i class='bx bxs-plus-circle'></i></button>
         </div>
     </main>
     <script src="popup.js"></script>
