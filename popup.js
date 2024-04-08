@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const displayArea = document.querySelector('section');
     const addKeyword = document.querySelector('.add-btn');
     const colorRadios = document.querySelectorAll('.clr');
+    const checkbox = document.getElementById('cbx-3');
 
     const defaultKeywords = {
         'this': '#FF3946',
@@ -10,8 +11,25 @@ document.addEventListener('DOMContentLoaded', function() {
         'the': '#e9ff70'
     };
 
-    let keywordsColors = JSON.parse(localStorage.getItem('keywordsColors')) || defaultKeywords;
+    // Load checkbox state from localStorage or set it to false by default
+    let checkboxState = JSON.parse(localStorage.getItem('checkboxState')) || false;
 
+    // Function to save checkbox state to localStorage
+    function saveCheckboxStateToLocalStorage() {
+        localStorage.setItem('checkboxState', JSON.stringify(checkboxState));
+    }
+
+    // Function to update checkbox state and save it to localStorage
+    function updateCheckboxState(event) {
+        checkboxState = event.target.checked;
+        saveCheckboxStateToLocalStorage();
+    }
+
+    // Add event listener to checkbox to update its state when it changes
+    checkbox.addEventListener('change', updateCheckboxState);
+
+    let keywordsColors = JSON.parse(localStorage.getItem('keywordsColors')) || defaultKeywords;
+    
     function saveKeywordsColorsToLocalStorage() {
         localStorage.setItem('keywordsColors', JSON.stringify(keywordsColors));
     }
@@ -73,4 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const keywordsWithColors = Object.entries(keywordsColors).map(([keyword, color]) => ({ keyword, color }));
     chrome.runtime.sendMessage({ action: 'highlight', keywords: keywordsWithColors });
 
+    // Set the initial state of the checkbox based on the loaded value
+    checkbox.checked = checkboxState;
 });

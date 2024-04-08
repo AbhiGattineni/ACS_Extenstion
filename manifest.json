@@ -7,15 +7,15 @@
   "action": {
     "default_popup": "index.html",
     "default_icon": {
-      "16": "images/icon.png",
-      "48": "images/icon.png",
-      "128": "images/icon.png"
+      "16": "images/Anddhen_logo.png",
+      "48": "images/Anddhen_logo.png",
+      "128": "images/Anddhen_logo.png"
     }
   },
   "icons": {
-    "16": "images/icon.png",
-    "48": "images/icon.png",
-    "128": "images/icon.png"
+    "16": "images/Anddhen_logo.png",
+    "48": "images/Anddhen_logo.png",
+    "128": "images/Anddhen_logo.png"
   },
   "background": {
     "service_worker": "background.js"

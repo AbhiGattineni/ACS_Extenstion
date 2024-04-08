@@ -3,8 +3,8 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
         const keywordsWithColors = message.keywords;
         if (keywordsWithColors && keywordsWithColors.length > 0) {
             // Remove existing highlighting spans
-            document.querySelectorAll('span.keyword-highlight').forEach(function(span) {
-                span.outerHTML = span.innerHTML;
+            document.querySelectorAll('mark.keyword-highlight').forEach(function(mark) {
+                mark.outerHTML = mark.innerHTML;
             });
 
             keywordsWithColors.forEach(({ keyword, color }) => {
