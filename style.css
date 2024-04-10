@@ -7,13 +7,21 @@
 body{
     background-color: rgba(244, 244, 244, 0.622);
     position: relative;
+    width: 500px;
 }
 
 nav{
     background-color: #fff;
-    box-shadow: 5px 0 5px gray;
+    box-shadow: 0 0 5px gray;
     padding: 1rem;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav img{
+    width: 2rem;
 }
 
 main{
@@ -28,14 +36,12 @@ main{
 .tab{
     background-color: rgb(220, 220, 220);
     display: inline-flex;
-    padding: 5px 15px;
+    padding: 5px 10px 5px 10px;
     border-radius: 10px;
-    cursor: pointer;
 }
 
-.tab:hover{
-    background-color: rgba(75, 75, 225, 0.901);
-    color: #fff;
+.tab i{
+    cursor: pointer;
 }
 
 .hint{
@@ -51,13 +57,70 @@ section{
     gap: 10px;
 }
 
-.tab:first-child{
-    background-color: rgba(75, 75, 225, 0.901);
-    color: white;
+section p{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    color: black;
+}
+
+section p i {
+    color: #fff;
+}
+
+div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+div input{
+    border-radius: 7px;
+    border: 2px solid;
+    padding: 10px 10px;
+}
+
+aside{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+aside input:checked::after{
+    border: 2px solid black;
+}
+
+aside input{
+    position: relative;
+    cursor: pointer;
+}
+
+aside input::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.redc::after{
+    background-color: #FF3946;
+}
+
+.yellowc::after{
+    background-color: #e9ff70;
+}
+
+.greenc::after{
+    background-color: #7cffc4;
 }
 
 .add-btn {
-    position: fixed;
+    cursor: pointer;
     bottom: 20px;
     right: 20px;
     width: 40px;
@@ -70,13 +133,18 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all .2s linear;
 }
 
 .add-btn i {
     font-size: 50px;
 }
 
-#submit{
+.add-btn:active{
+    box-shadow: 0 0 0;
+}
+
+#highlightButton{
     padding: 10px 25px;
     border: none;
     border-radius: 10px;
@@ -85,4 +153,77 @@ section{
     letter-spacing: 2px;
     font-size: medium;
     cursor: pointer;
+    box-shadow: 2px 2px 7px gray;
+    transition: all .2s linear;
 }
+
+#highlightButton:active{
+    box-shadow: 0 0 0;
+}
+
+.checkbox-wrapper-3 input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+  }
+
+  .checkbox-wrapper-3 .toggle {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+  }
+  .checkbox-wrapper-3 .toggle:before {
+    content: "";
+    position: relative;
+    top: 3px;
+    left: 3px;
+    width: 34px;
+    height: 14px;
+    display: block;
+    background: #9A9999;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+  }
+  .checkbox-wrapper-3 .toggle span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(154, 153, 153, 0.5);
+    transition: all 0.2s ease;
+  }
+  .checkbox-wrapper-3 .toggle span:before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: -18px;
+    width: 56px;
+    height: 56px;
+    background: rgba(79, 46, 220, 0.5);
+    border-radius: 50%;
+    transform: scale(0);
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  .checkbox-wrapper-3 #cbx-3:checked + .toggle:before {
+    background: #947ADA;
+  }
+  .checkbox-wrapper-3 #cbx-3:checked + .toggle span {
+    background: #4F2EDC;
+    transform: translateX(20px);
+    transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
+    box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2);
+  }
+  .checkbox-wrapper-3 #cbx-3:checked + .toggle span:before {
+    transform: scale(1);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }

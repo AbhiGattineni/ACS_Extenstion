@@ -9,28 +9,27 @@
 </head>
 <body>
     <nav>
-        <h1>Highlight keywords</h1>
+        <img src="/images/Anddhen_logo.png" alt="logo">
+        <h1>Anddhen Group</h1>
+        <div class="checkbox-wrapper-3">
+            <input type="checkbox" id="cbx-3" />
+            <label for="cbx-3" class="toggle"><span></span></label>
+        </div>
     </nav>
     <main>
-        <p class="hint">select keywords to highlight</p>
+        <p class="hint">keywords to highlight</p>
         <section>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
-            <p class="tab">lorem</p>
         </section>
-        <button id="submit">Highlight</button>
+        <div>
+            <aside>
+                <input type="radio" id="redColor" name="color" class="redc clr">
+                <input type="radio" id="greenColor" name="color" class="greenc clr">
+                <input type="radio" id="yellowColor" name="color" class="yellowc clr" checked>
+            </aside>
+            <input id="keywordsInput" type="text" placeholder="Enter Keyword">
+            <button title="Add Keyword" class="add-btn"><i class='bx bxs-plus-circle'></i></button>
+        </div>
     </main>
-    <button title="add-keyword" class="add-btn"><i class='bx bxs-plus-circle'></i></button>
+    <script src="popup.js"></script>
 </body>
 </html>
